@@ -92,27 +92,57 @@ namespace HDTTrinketDisplay
                 return;
             Player player = Core.Game.Player;
             IEnumerable<Entity> trinkets = player.Trinkets;
-            List<string> trinketList = trinkets.Select(t => t.CardId).ToList();
+            IEnumerable<Entity> questRewards = player.QuestRewards;
+            IEnumerable<Entity> quests = player.Quests;
+            int? AnomalyDbfId = BattlegroundsUtils.GetBattlegroundsAnomalyDbfId(Core.Game.GameEntity);
+
+            // Combine trinket, quest reward, and quest card IDs into a single list
+            List<string> allCardIds = trinkets.Select(t => t.CardId)
+                                              .Concat(questRewards.Select(q => q.CardId))
+                                              .Concat(quests.Select(q => q.CardId))
+                                              .ToList();
+
+            if (AnomalyDbfId.HasValue)
+            {
+                Log.Info("Anomaly DbfId found: " + AnomalyDbfId.Value);
+                HSCard card = Database.GetCardFromDbfId(AnomalyDbfId.Value, false);
+                Log.Info("Anomaly DbfId found: " + card.Id);
+                allCardIds.Add(card.Id);
+            }
 
             int index = 0;
 
             while (enCours)
             {
                 trinkets = player.Trinkets;
-                trinketList = trinkets.Select(t => t.CardId).ToList();
-                if (!trinketList.Any())
+                questRewards = player.QuestRewards;
+                quests = player.Quests;
+                AnomalyDbfId = BattlegroundsUtils.GetBattlegroundsAnomalyDbfId(Core.Game.GameEntity);
+
+
+                allCardIds = trinkets.Select(t => t.CardId) 
+                                     .Concat(questRewards.Select(q => q.CardId))
+                                     .Concat(quests.Select(q => q.CardId))
+                                     .ToList();
+
+                if (AnomalyDbfId.HasValue)
+                {
+                    Log.Info("Anomaly DbfId found: " + AnomalyDbfId.Value);
+                    HSCard card = Database.GetCardFromDbfId(AnomalyDbfId.Value, false);
+                    Log.Info("Anomaly DbfId found: " + card.Id);
+                    allCardIds.Add(card.Id);
+                }
+
+                if (!allCardIds.Any())
                 {
                     await Task.Delay(10000);
                 }
                 else
                 {
-                    InitializeView(trinketList[index]);
+                    InitializeView(allCardIds[index % allCardIds.Count]);
                     await Task.Delay(20000);
-                    index = (index + 1) % trinketList.Count;
+                    index++;
                 }
-
-  
-
             }
         }
     }
