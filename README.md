@@ -1,7 +1,6 @@
 # HDT (kinda everything) Display Plugin
 
-Enhance your Hearthstone Battlegrounds streaming experience with the HDT (kinda everything) Display Plugin. This tool overlays information about "anomalies", "buddies", "trinkets", "quests" and "quest rewards" directly onto your stream,  
-saving you from the hassle of manual updates. It's designed to integrate smoothly with Hearthstone Deck Tracker (HDT), providing both streamers and their audience with real-time game insights.
+Enhance your Hearthstone Battlegrounds streaming experience with the HDT (kinda everything) Display Plugin. This tool overlays information about "anomalies", "buddies", "trinkets", "quests" and "quest rewards" directly onto your stream, saving you from the hassle of manual updates. It's designed to integrate smoothly with Hearthstone Deck Tracker (HDT), providing both streamers and their audience with real-time game insights.
 
 ## Features
 
@@ -23,12 +22,11 @@ Once installed, the plugin will automatically display things tooltips within the
 ## Project Evolution
 
 Originally, this project was designed solely to display **trinkets**.  
-Over time, it has expanded to include **anomalies, buddies, quests,** and **quest rewards**,  
-making it an all-in-one tool.
+Over time, it has expanded to include **anomalies, buddies, quests,** and **quest rewards**, making it an all-in-one tool.
 
 ## Contributions
 
-All credit to [@Tignus](https://github.com/Tignus) for the incredible work on [HDTAnomalyDisplay](https://github.com/Mouchoir/HDTAnomalyDisplay)! 
+All credit to [@Tignus](https://github.com/Tignus) for the incredible work on [HDTAnomalyDisplay](https://github.com/Mouchoir/HDTAnomalyDisplay)!
 Huge thanks as well to [@Mouchoir](https://github.com/Mouchoir) for their work on [HDTBuddyDisplay](https://github.com/Mouchoir/HDTBuddyDisplay)!
 
 Want to contribute? We'd love your input:
