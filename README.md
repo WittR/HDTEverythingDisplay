@@ -14,7 +14,7 @@ Enhance your Hearthstone Battlegrounds streaming experience with the HDT (kinda 
 
 To install the HDT Display Plugin:
 
-1. Download the [latest release](https://github.com/WittR/HDTTrinketDisplay_M/releases/tag/Latest) `.dll` file.
+1. Download the [latest release](https://github.com/WittR/HDTEverythingDisplay/releases/tag/Latest) `.dll` file.
 2. Drag and drop the file onto the HDT plugins settings window, or manually extract the `.dll` file to your HDT plugin folder (typically located at `%AppData%\HearthstoneDeckTracker\Plugins`).
 
 Once installed, the plugin will automatically display things tooltips within the Hearthstone Deck Tracker overlay during your game sessions.
